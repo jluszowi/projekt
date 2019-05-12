@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="Windows-88592">
+    <title th:text="${title}"> </title>
+</head>
+<body>
+
+    <h1 th:text="${title}"> </h1>
+
+    <table>
+        <tr th:each="colorsRow : ${colors}">
+            <td width="100px", height="100px"
+                th:each="color : ${colorsRow}"
+                th:attr="bgcolor=${color}"
+                th:onclick="'location.href= \'' + @{/select/{c}(c=${color})} + ' \' '"
+            />
+        </tr>
+
+    </table>
+
+    <table>
+        <tr bgcolor="#f0ffff">
+            <td width="100px", height="100px">aaaaa aaaa</td>
+            <td width="100px", height="100px">bbbbbbbbbb</td>
+            <td width="100px", height="100px">ccc cccccccc</td>
+
+        </tr>
+
+    </table>
+
+</body>
+</html>
